@@ -1,11 +1,28 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      padding: '1rem',
+    },
+    extend: {
+      backgroundColor: {
+        google: '#356df2',
+        github: '#161b22',
+      },
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      ringWidth: ['focus-visible'],
+      outline: ['focus-visible'],
+    },
   },
   plugins: [],
-}
+};
